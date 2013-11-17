@@ -81,21 +81,29 @@
 	<h2 class="title">File Attributes in Clojure</h2>
 	<div class="entry-content"><p>While writing <a href="https://github.com/gmacd/chanchan">ChanChan</a> I wanted to get the creation time of a file.  <code>java.io.File</code> only gives you the last modified time, which isn&rsquo;t quite what I was after.  Java 7 has <code>BasicFileAttributes</code>, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call <code>Files.readAttributes</code>.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I&rsquo;m putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct &ndash; it&rsquo;s been edited from my original code&hellip;).</p>
 
-<div>
-  <pre><code class='clojure'>(ns foo
-  (:require [clojure.java.io :as jio])
-  (:import (java.nio.file Files LinkOption)
-           (java.nio.file.attribute BasicFileAttributes)))
-
-(defn file-attributes [file]
-  &quot;Return the file BasicFileAttributes of file.  File can be a file or a string
-   (or anything else acceptable to jio/file)&quot;
-  (Files/readAttributes (.toPath (jio/file file))
-                        BasicFileAttributes
-                        (into-array LinkOption [])))</code></pre>
-</div>
-
-
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">ns </span><span class="nv">foo</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.java.io</span> <span class="ss">:as</span> <span class="nv">jio</span><span class="p">])</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">(</span><span class="nf">java.nio.file</span> <span class="nv">Files</span> <span class="nv">LinkOption</span><span class="p">)</span>
+</span><span class='line'>           <span class="p">(</span><span class="nf">java.nio.file.attribute</span> <span class="nv">BasicFileAttributes</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">file-attributes</span> <span class="p">[</span><span class="nv">file</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Return the file BasicFileAttributes of file.  File can be a file or a string</span>
+</span><span class='line'><span class="s">   (or anything else acceptable to jio/file)&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">Files/readAttributes</span> <span class="p">(</span><span class="nf">.toPath</span> <span class="p">(</span><span class="nf">jio/file</span> <span class="nv">file</span><span class="p">))</span>
+</span><span class='line'>                        <span class="nv">BasicFileAttributes</span>
+</span><span class='line'>                        <span class="p">(</span><span class="nb">into-array </span><span class="nv">LinkOption</span> <span class="p">[])))</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
 

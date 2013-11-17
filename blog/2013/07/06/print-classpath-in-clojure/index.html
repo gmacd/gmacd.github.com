@@ -81,7 +81,10 @@
 	<h2 class="title">Print Classpath in Clojure</h2>
 	<div class="entry-content"><p>Print out the current classpath, line by line, in Clojure:</p>
 
-<p><code>(doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))</code></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">line</span> <span class="p">(</span><span class="nf">.getURLs</span> <span class="p">(</span><span class="nf">java.lang.ClassLoader/getSystemClassLoader</span><span class="p">))]</span> <span class="p">(</span><span class="nb">prn </span><span class="nv">line</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 

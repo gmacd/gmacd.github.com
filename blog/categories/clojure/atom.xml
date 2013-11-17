@@ -4,7 +4,7 @@
   <title><![CDATA[Category: clojure | Graham MacDonald]]></title>
   <link href="http://gmacd.github.io/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://gmacd.github.io/"/>
-  <updated>2013-11-17T08:57:29+00:00</updated>
+  <updated>2013-11-17T09:03:43+00:00</updated>
   <id>http://gmacd.github.io/</id>
   <author>
     <name><![CDATA[Graham MacDonald]]></name>
@@ -20,28 +20,25 @@
     <id>http://gmacd.github.io/blog/2013/07/19/file-attributes-in-clojure</id>
     <content type="html"><![CDATA[<p>While writing <a href="https://github.com/gmacd/chanchan">ChanChan</a> I wanted to get the creation time of a file.  <code>java.io.File</code> only gives you the last modified time, which isn&rsquo;t quite what I was after.  Java 7 has <code>BasicFileAttributes</code>, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call <code>Files.readAttributes</code>.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I&rsquo;m putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct &ndash; it&rsquo;s been edited from my original code&hellip;).</p>
 
-<p><div>
-  <pre><code class='clojure'>&lt;/p&gt;
+<p>``` clojure</p>
 
-&lt;p&gt;(ns foo
+<p>(ns foo
   (:require [clojure.java.io :as jio])
-  (:import (java.nio.file Files LinkOption)&lt;/p&gt;
+  (:import (java.nio.file Files LinkOption)</p>
 
-&lt;pre&gt;&lt;code&gt;       (java.nio.file.attribute BasicFileAttributes)))
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>       (java.nio.file.attribute BasicFileAttributes)))
+</code></pre>
 
-&lt;p&gt;(defn file-attributes [file]
-  &amp;ldquo;Return the file BasicFileAttributes of file.  File can be a file or a string
-   (or anything else acceptable to jio/file)&amp;rdquo;
-  (Files/readAttributes (.toPath (jio/file file))&lt;/p&gt;
+<p>(defn file-attributes [file]
+  &ldquo;Return the file BasicFileAttributes of file.  File can be a file or a string
+   (or anything else acceptable to jio/file)&rdquo;
+  (Files/readAttributes (.toPath (jio/file file))</p>
 
-&lt;pre&gt;&lt;code&gt;                    BasicFileAttributes
+<pre><code>                    BasicFileAttributes
                     (into-array LinkOption [])))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;</code></pre>
-</div>
-</p>
+<p>```</p>
 ]]></content>
   </entry>
   
@@ -94,69 +91,66 @@
 
 <p>The code for this release can be found on <a href="https://github.com/gmacd/chanchan/releases/tag/0.1">github</a>, or you can see the the code in its entirity below.</p>
 
-<p><div>
-  <pre><code class='clojure'>&lt;/p&gt;
+<p>``` clojure</p>
 
-&lt;p&gt;(ns blog.core
+<p>(ns blog.core
   [:require [clojure.java.io :as jio]]
   [:use [markdown.core :only [md-to-html-string]]]
-  [:use [hiccup core page]])&lt;/p&gt;
+  [:use [hiccup core page]])</p>
 
-&lt;p&gt;(def src-posts-path &amp;ldquo;assets/posts&amp;rdquo;)
-(def dest-posts-path &amp;ldquo;site/posts&amp;rdquo;)&lt;/p&gt;
+<p>(def src-posts-path &ldquo;assets/posts&rdquo;)
+(def dest-posts-path &ldquo;site/posts&rdquo;)</p>
 
-&lt;p&gt;(defn html-post [title body]
-  (html5 [:head&lt;/p&gt;
+<p>(defn html-post [title body]
+  (html5 [:head</p>
 
-&lt;pre&gt;&lt;code&gt;      [:link {:rel &quot;stylesheet&quot; :type &quot;text/css&quot; :href &quot;../bootstrap/css/bootstrap.css&quot;}]
+<pre><code>      [:link {:rel "stylesheet" :type "text/css" :href "../bootstrap/css/bootstrap.css"}]
       [:title title]]
      [:body body]))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;(defn files-with-extension [src ext]
-  &amp;ldquo;Return all files in src with the extension ext.  E.g. &amp;lsquo;.md&amp;rsquo;&amp;rdquo;
-  (&amp;ndash;&gt;&gt; (jio/file src)&lt;/p&gt;
+<p>(defn files-with-extension [src ext]
+  &ldquo;Return all files in src with the extension ext.  E.g. &lsquo;.md&rsquo;&rdquo;
+  (&ndash;>> (jio/file src)</p>
 
-&lt;pre&gt;&lt;code&gt;   (file-seq)
+<pre><code>   (file-seq)
    (filter #(.endsWith (.getName %) ext))))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;(defn with-ext [path ext]
-  &amp;ldquo;Return a new file with the extension added or replaced with &amp;lsquo;ext&amp;rsquo;&amp;rdquo;
-  (let [period-idx (.lastIndexOf path &amp;ldquo;.&amp;rdquo;)]&lt;/p&gt;
+<p>(defn with-ext [path ext]
+  &ldquo;Return a new file with the extension added or replaced with &lsquo;ext&rsquo;&rdquo;
+  (let [period-idx (.lastIndexOf path &ldquo;.&rdquo;)]</p>
 
-&lt;pre&gt;&lt;code&gt;(if (not= period-idx -1)
-  (str (.substring path 0 period-idx) &quot;.&quot; ext)
-  (str path &quot;.&quot; ext))))
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>(if (not= period-idx -1)
+  (str (.substring path 0 period-idx) "." ext)
+  (str path "." ext))))
+</code></pre>
 
-&lt;p&gt;(defn convert-md-file [src dest]
-  (let [md-contents (slurp src)]&lt;/p&gt;
+<p>(defn convert-md-file [src dest]
+  (let [md-contents (slurp src)]</p>
 
-&lt;pre&gt;&lt;code&gt;(-&amp;gt;&amp;gt; md-contents
+<pre><code>(-&gt;&gt; md-contents
      (md-to-html-string)
-     (html-post &quot;post?&quot;)
+     (html-post "post?")
      (spit dest))))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;(defn convert-all-md-files [src-path dest-path]
-  (let [src (jio/file src-path)&lt;/p&gt;
+<p>(defn convert-all-md-files [src-path dest-path]
+  (let [src (jio/file src-path)</p>
 
-&lt;pre&gt;&lt;code&gt;    dest (jio/file dest-path)
-    md-files (files-with-extension src-path &quot;.md&quot;)]
+<pre><code>    dest (jio/file dest-path)
+    md-files (files-with-extension src-path ".md")]
 (doseq [md-file md-files]
-  (let [dest-path (str dest-path &quot;/&quot; (with-ext (.getName md-file) &quot;html&quot;))]
+  (let [dest-path (str dest-path "/" (with-ext (.getName md-file) "html"))]
     (convert-md-file md-file dest-path)))))
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;(defn -main [&amp;amp; args]
-  ; Bit of a hack to create the folder &amp;ndash; better way?
-  (jio/make-parents (str dest-posts-path &amp;ldquo;/x&amp;rdquo;))
-  (convert-all-md-files src-posts-path dest-posts-path))&lt;/p&gt;
+<p>(defn -main [&amp; args]
+  ; Bit of a hack to create the folder &ndash; better way?
+  (jio/make-parents (str dest-posts-path &ldquo;/x&rdquo;))
+  (convert-all-md-files src-posts-path dest-posts-path))</p>
 
-&lt;p&gt;</code></pre>
-</div>
-</p>
+<p>```</p>
 ]]></content>
   </entry>
   
@@ -167,7 +161,9 @@
     <id>http://gmacd.github.io/blog/2013/07/06/print-classpath-in-clojure</id>
     <content type="html"><![CDATA[<p>Print out the current classpath, line by line, in Clojure:</p>
 
-<p><code>(doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))</code></p>
+<p><code>clojure
+(doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))
+</code></p>
 ]]></content>
   </entry>
   

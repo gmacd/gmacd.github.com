@@ -89,54 +89,99 @@
 
 <p>The code for this release can be found on <a href="https://github.com/gmacd/chanchan/releases/tag/0.1">github</a>, or you can see the the code in its entirity below.</p>
 
-<div>
-  <pre><code class='clojure'>(ns blog.core
-  [:require [clojure.java.io :as jio]]
-  [:use [markdown.core :only [md-to-html-string]]]
-  [:use [hiccup core page]])
-
-(def src-posts-path &quot;assets/posts&quot;)
-(def dest-posts-path &quot;site/posts&quot;)
-
-(defn html-post [title body]
-  (html5 [:head
-          [:link {:rel &quot;stylesheet&quot; :type &quot;text/css&quot; :href &quot;../bootstrap/css/bootstrap.css&quot;}]
-          [:title title]]
-         [:body body]))
-
-(defn files-with-extension [src ext]
-  &quot;Return all files in src with the extension ext.  E.g. &#39;.md&#39;&quot;
-  (-&gt;&gt; (jio/file src)
-       (file-seq)
-       (filter #(.endsWith (.getName %) ext))))
-
-(defn with-ext [path ext]
-  &quot;Return a new file with the extension added or replaced with &#39;ext&#39;&quot;
-  (let [period-idx (.lastIndexOf path &quot;.&quot;)]
-    (if (not= period-idx -1)
-      (str (.substring path 0 period-idx) &quot;.&quot; ext)
-      (str path &quot;.&quot; ext))))
-
-(defn convert-md-file [src dest]
-  (let [md-contents (slurp src)]
-    (-&gt;&gt; md-contents
-         (md-to-html-string)
-         (html-post &quot;post?&quot;)
-         (spit dest))))
-
-(defn convert-all-md-files [src-path dest-path]
-  (let [src (jio/file src-path)
-        dest (jio/file dest-path)
-        md-files (files-with-extension src-path &quot;.md&quot;)]
-    (doseq [md-file md-files]
-      (let [dest-path (str dest-path &quot;/&quot; (with-ext (.getName md-file) &quot;html&quot;))]
-        (convert-md-file md-file dest-path)))))
-        
-(defn -main [&amp; args]
-  ; Bit of a hack to create the folder - better way?
-  (jio/make-parents (str dest-posts-path &quot;/x&quot;))
-  (convert-all-md-files src-posts-path dest-posts-path))</code></pre>
-</div>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">ns </span><span class="nv">blog.core</span>
+</span><span class='line'>  <span class="p">[</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.java.io</span> <span class="ss">:as</span> <span class="nv">jio</span><span class="p">]]</span>
+</span><span class='line'>  <span class="p">[</span><span class="ss">:use</span> <span class="p">[</span><span class="nv">markdown.core</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">md-to-html-string</span><span class="p">]]]</span>
+</span><span class='line'>  <span class="p">[</span><span class="ss">:use</span> <span class="p">[</span><span class="nv">hiccup</span> <span class="nv">core</span> <span class="nv">page</span><span class="p">]])</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">src-posts-path</span> <span class="s">&quot;assets/posts&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">dest-posts-path</span> <span class="s">&quot;site/posts&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">html-post</span> <span class="p">[</span><span class="nv">title</span> <span class="nv">body</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">html5</span> <span class="p">[</span><span class="ss">:head</span>
+</span><span class='line'>          <span class="p">[</span><span class="ss">:link</span> <span class="p">{</span><span class="ss">:rel</span> <span class="s">&quot;stylesheet&quot;</span> <span class="ss">:type</span> <span class="s">&quot;text/css&quot;</span> <span class="ss">:href</span> <span class="s">&quot;../bootstrap/css/bootstrap.css&quot;</span><span class="p">}]</span>
+</span><span class='line'>          <span class="p">[</span><span class="ss">:title</span> <span class="nv">title</span><span class="p">]]</span>
+</span><span class='line'>         <span class="p">[</span><span class="ss">:body</span> <span class="nv">body</span><span class="p">]))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">files-with-extension</span> <span class="p">[</span><span class="nv">src</span> <span class="nv">ext</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Return all files in src with the extension ext.  E.g. &#39;.md&#39;&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="p">(</span><span class="nf">jio/file</span> <span class="nv">src</span><span class="p">)</span>
+</span><span class='line'>       <span class="p">(</span><span class="nf">file-seq</span><span class="p">)</span>
+</span><span class='line'>       <span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nf">.endsWith</span> <span class="p">(</span><span class="nf">.getName</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">ext</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">with-ext</span> <span class="p">[</span><span class="nb">path </span><span class="nv">ext</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Return a new file with the extension added or replaced with &#39;ext&#39;&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">period-idx</span> <span class="p">(</span><span class="nf">.lastIndexOf</span> <span class="nb">path </span><span class="s">&quot;.&quot;</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">not= </span><span class="nv">period-idx</span> <span class="mi">-1</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">.substring</span> <span class="nb">path </span><span class="mi">0</span> <span class="nv">period-idx</span><span class="p">)</span> <span class="s">&quot;.&quot;</span> <span class="nv">ext</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">str path </span><span class="s">&quot;.&quot;</span> <span class="nv">ext</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">convert-md-file</span> <span class="p">[</span><span class="nv">src</span> <span class="nv">dest</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">md-contents</span> <span class="p">(</span><span class="nb">slurp </span><span class="nv">src</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="nv">md-contents</span>
+</span><span class='line'>         <span class="p">(</span><span class="nf">md-to-html-string</span><span class="p">)</span>
+</span><span class='line'>         <span class="p">(</span><span class="nf">html-post</span> <span class="s">&quot;post?&quot;</span><span class="p">)</span>
+</span><span class='line'>         <span class="p">(</span><span class="nf">spit</span> <span class="nv">dest</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">convert-all-md-files</span> <span class="p">[</span><span class="nv">src-path</span> <span class="nv">dest-path</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">src</span> <span class="p">(</span><span class="nf">jio/file</span> <span class="nv">src-path</span><span class="p">)</span>
+</span><span class='line'>        <span class="nv">dest</span> <span class="p">(</span><span class="nf">jio/file</span> <span class="nv">dest-path</span><span class="p">)</span>
+</span><span class='line'>        <span class="nv">md-files</span> <span class="p">(</span><span class="nf">files-with-extension</span> <span class="nv">src-path</span> <span class="s">&quot;.md&quot;</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">md-file</span> <span class="nv">md-files</span><span class="p">]</span>
+</span><span class='line'>      <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">dest-path</span> <span class="p">(</span><span class="nb">str </span><span class="nv">dest-path</span> <span class="s">&quot;/&quot;</span> <span class="p">(</span><span class="nf">with-ext</span> <span class="p">(</span><span class="nf">.getName</span> <span class="nv">md-file</span><span class="p">)</span> <span class="s">&quot;html&quot;</span><span class="p">))]</span>
+</span><span class='line'>        <span class="p">(</span><span class="nf">convert-md-file</span> <span class="nv">md-file</span> <span class="nv">dest-path</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">-main</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
+</span><span class='line'>  <span class="c1">; Bit of a hack to create the folder - better way?</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">jio/make-parents</span> <span class="p">(</span><span class="nb">str </span><span class="nv">dest-posts-path</span> <span class="s">&quot;/x&quot;</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">convert-all-md-files</span> <span class="nv">src-posts-path</span> <span class="nv">dest-posts-path</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
