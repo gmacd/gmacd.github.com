@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: angular | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/angular/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-11-17T21:46:31+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Conway's Game of Life in Dart]]></title>
+    <link href="http://gmacd.github.io/blog/2013/11/17/dartlife2/"/>
+    <updated>2013-11-17T21:36:00+00:00</updated>
+    <id>http://gmacd.github.io/blog/2013/11/17/dartlife2</id>
+    <content type="html"><![CDATA[<p>While playing around with Dart, I implemented <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway&rsquo;s Game of Life</a>.  It was also a good excuse to try out Angular.</p>
+
+<p>I haven&rsquo;t put a live demo up yet, but you can <a href="https://github.com/gmacd/dartlife">grab the source here.</a></p>
+]]></content>
+  </entry>
+  
+</feed>

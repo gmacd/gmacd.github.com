@@ -7,7 +7,8 @@
 	<meta name="author" content="Graham MacDonald">
 
 	
-	<meta name="description" content="Procdump can be used to get a crash dump for an process in varying circumstances. In my (test) case, my app is throwing NotImplementedException, and &hellip;">
+	<meta name="description" content="Print out the current classpath, line by line, in Clojure: 1
+(doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line)) Jul &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +79,52 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/06/print-classpath-in-clojure/">
+		
+			Print Classpath in Clojure</a>
+	</h2>
+	<div class="entry-content">
+		<p>Print out the current classpath, line by line, in Clojure:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">line</span> <span class="p">(</span><span class="nf">.getURLs</span> <span class="p">(</span><span class="nf">java.lang.ClassLoader/getSystemClassLoader</span><span class="p">))]</span> <span class="p">(</span><span class="nb">prn </span><span class="nv">line</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-06T00:00:00+01:00" pubdate data-updated="true">Jul 6<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/clojure/'>clojure</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
