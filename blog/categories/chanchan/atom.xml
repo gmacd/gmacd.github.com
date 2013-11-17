@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: chanchan | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/chanchan/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-11-17T08:57:29+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[File attributes in Clojure]]></title>
+    <link href="http://gmacd.github.io/blog/2013/07/19/file-attributes-in-clojure/"/>
+    <updated>2013-07-19T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/07/19/file-attributes-in-clojure</id>
+    <content type="html"><![CDATA[<p>While writing <a href="https://github.com/gmacd/chanchan">ChanChan</a> I wanted to get the creation time of a file.  <code>java.io.File</code> only gives you the last modified time, which isn&rsquo;t quite what I was after.  Java 7 has <code>BasicFileAttributes</code>, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call <code>Files.readAttributes</code>.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I&rsquo;m putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct &ndash; it&rsquo;s been edited from my original code&hellip;).</p>
+
+<p><div>
+  <pre><code class='clojure'>&lt;/p&gt;
+
+&lt;p&gt;(ns foo
+  (:require [clojure.java.io :as jio])
+  (:import (java.nio.file Files LinkOption)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;       (java.nio.file.attribute BasicFileAttributes)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn file-attributes [file]
+  &amp;ldquo;Return the file BasicFileAttributes of file.  File can be a file or a string
+   (or anything else acceptable to jio/file)&amp;rdquo;
+  (Files/readAttributes (.toPath (jio/file file))&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                    BasicFileAttributes
+                    (into-array LinkOption [])))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;</code></pre>
+</div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ChanChan: Posts listed on front page]]></title>
+    <link href="http://gmacd.github.io/blog/2013/07/15/chanchan-posts-listed-on-front-page/"/>
+    <updated>2013-07-15T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/07/15/chanchan-posts-listed-on-front-page</id>
+    <content type="html"><![CDATA[<p>A bit more work has been done on ChanChan, enough to merit a new tag &ndash; <a href="https://github.com/gmacd/chanchan/releases/tag/0.3">0.3</a>!</p>
+
+<p>The fundamental change is that ChanChan now shows a list of links on the front page to all the posts.  In making this change, quite a few of the functions have been modified, making it a bit easier to reuse useful data at different points in the post conversion pipeline.</p>
+
+<p>A couple of random thoughts occured to be while making these changes:
+* Clojure functions tend to be small.
+* I have to put a lot of thought into how best to write the code, or how best to change it.  I&rsquo;ve never written a static web page generator before, but I imagine I could knock one up in C# (the main language I use at work) pretty quickly.  I&rsquo;m not sure if I&rsquo;m taking more time due to my relative lack of familiarity with the language, or if it&rsquo;s a more general side-effect of functional or lisp programming.
+* .Net has much better facilities for operating on paths.  Or maybe Java/Clojure has better facilities that I&rsquo;m not aware of&hellip;
+* I&rsquo;m pleased with the size of the codebase.  It&rsquo;s currently running at 107 lines of code, with comments, docstrings and empty lines (HTML templates excluded).  I&rsquo;m not actively trying to minimize the number of lines used, but I&rsquo;d like to get a minimal useful site generator fitting comfortably into a single Clojure file without it feeling forced or being detrimental to understanding the code.</p>
+
+<p>Looking forward, the next step is to add some metadata to the posts and begin to extract it.  I&rsquo;m thinking of post titles initially, and then perhaps tags.  Unfortunately, Markdown doesn&rsquo;t seem to support metadata by default, although there appear to be some extensions that support this.  Time for some googling&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ChanChan: File watching + web serving]]></title>
+    <link href="http://gmacd.github.io/blog/2013/07/11/chanchan-file-watching-web-serving/"/>
+    <updated>2013-07-11T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/07/11/chanchan-file-watching-web-serving</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve just comitted a new version of <a href="https://github.com/gmacd/chanchan/releases/tag/0.2">ChanChan (0.2)</a> to github.  This relase is pretty small in terms of code changes, but adds some useful functionality:</p>
+
+<ul>
+<li><strong>Webserver</strong>: ChanChan now uses ring to setup a webserver to serve the blog on port 3000.  There&rsquo;s currently no fallback if this port is unavailable.  To start the server, use <code>lein run</code>.</li>
+<li><strong>File watching</strong>: ChanChan will watch the posts folder for any new or modified posts and convert them automatically.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ChanChan]]></title>
+    <link href="http://gmacd.github.io/blog/2013/07/07/chanchan/"/>
+    <updated>2013-07-07T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/07/07/chanchan</id>
+    <content type="html"><![CDATA[<p>I just spent the last 30 mins trying to get the Clojure code below to be nicely syntax highlighted in Jekyll. It turned out to require me to use the tag <code>highlight clojure</code> to mark the code to be highlighted.  Once that was done, it would silently fail to colour the text until I copied a css file for syntax highlighting that I had to download from somewhere, and put it in one of the several locations in my Jekyll/blog folder.</p>
+
+<p>Not really the end of the world, but actually a bit comforting, since I decided to write my own static blog generator yesterday.</p>
+
+<p>It&rsquo;s called ChanChan, named after my daughter&rsquo;s toy rabbit, because why not?  It&rsquo;s written in Clojure, because, again, why not?  Actually, there&rsquo;s more reason than that &ndash; I rather like Clojure, don&rsquo;t use it at work, and was looking for something to write with it.</p>
+
+<p>It&rsquo;s very early days, but I plan on keeping a journal of the development here.  Currently, it assumes all posts are written in Markdown, and in the folder <code>assets/posts</code>.  It picks up all the <code>.md</code> files in that folder, converts them to html, and writes them to <code>site/posts</code>.</p>
+
+<p>The code for this release can be found on <a href="https://github.com/gmacd/chanchan/releases/tag/0.1">github</a>, or you can see the the code in its entirity below.</p>
+
+<p><div>
+  <pre><code class='clojure'>&lt;/p&gt;
+
+&lt;p&gt;(ns blog.core
+  [:require [clojure.java.io :as jio]]
+  [:use [markdown.core :only [md-to-html-string]]]
+  [:use [hiccup core page]])&lt;/p&gt;
+
+&lt;p&gt;(def src-posts-path &amp;ldquo;assets/posts&amp;rdquo;)
+(def dest-posts-path &amp;ldquo;site/posts&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;(defn html-post [title body]
+  (html5 [:head&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;      [:link {:rel &quot;stylesheet&quot; :type &quot;text/css&quot; :href &quot;../bootstrap/css/bootstrap.css&quot;}]
+      [:title title]]
+     [:body body]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn files-with-extension [src ext]
+  &amp;ldquo;Return all files in src with the extension ext.  E.g. &amp;lsquo;.md&amp;rsquo;&amp;rdquo;
+  (&amp;ndash;&gt;&gt; (jio/file src)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   (file-seq)
+   (filter #(.endsWith (.getName %) ext))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn with-ext [path ext]
+  &amp;ldquo;Return a new file with the extension added or replaced with &amp;lsquo;ext&amp;rsquo;&amp;rdquo;
+  (let [period-idx (.lastIndexOf path &amp;ldquo;.&amp;rdquo;)]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(if (not= period-idx -1)
+  (str (.substring path 0 period-idx) &quot;.&quot; ext)
+  (str path &quot;.&quot; ext))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn convert-md-file [src dest]
+  (let [md-contents (slurp src)]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(-&amp;gt;&amp;gt; md-contents
+     (md-to-html-string)
+     (html-post &quot;post?&quot;)
+     (spit dest))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn convert-all-md-files [src-path dest-path]
+  (let [src (jio/file src-path)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    dest (jio/file dest-path)
+    md-files (files-with-extension src-path &quot;.md&quot;)]
+(doseq [md-file md-files]
+  (let [dest-path (str dest-path &quot;/&quot; (with-ext (.getName md-file) &quot;html&quot;))]
+    (convert-md-file md-file dest-path)))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(defn -main [&amp;amp; args]
+  ; Bit of a hack to create the folder &amp;ndash; better way?
+  (jio/make-parents (str dest-posts-path &amp;ldquo;/x&amp;rdquo;))
+  (convert-all-md-files src-posts-path dest-posts-path))&lt;/p&gt;
+
+&lt;p&gt;</code></pre>
+</div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

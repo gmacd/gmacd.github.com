@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: todo | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/todo/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-11-17T08:57:29+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TODO: Wiki]]></title>
+    <link href="http://gmacd.github.io/blog/2013/05/18/todo-tiddly-wiki/"/>
+    <updated>2013-05-18T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/05/18/todo-tiddly-wiki</id>
+    <content type="html"><![CDATA[<p>One of my preferred ways of procrastinating is thinking about organising todo lists (the programmer in me wrote &lsquo;TODO&rsquo; there and had to go back and change it &ndash; disappointed it&rsquo;s not syntax highlighted here&hellip;).  I&rsquo;d like to combine todo lists with more general notes, documents, my calendar, etc., and have it all versioned too.  Oh, and it should be cross platform and the data should be accessible and up to date from home, work or anywhere else.  And it should be secure.  I&rsquo;d like to be able to do some spreadsheet-like data manipulation and graphing too.</p>
+
+<p>Now if I want to do all that, I&rsquo;ll have to write something myself.  I could probably use something like <a href="http://evernote.com/">Evernote</a> to get part way there, but I don&rsquo;t want to pay for a service I&rsquo;d then feel locked into, and anyway it&rsquo;s not quite what I have in mind.</p>
+
+<p>Ideally, I&rsquo;d like to be able to do all this without having to install anything on the client, so this basically means a website.  Or a text file.  Or maybe some heavy customization of <a href="http://orgmode.org/">Emacs org-mode</a>?  (That&rsquo;s assuming Emacs is already installed, so not really cheating&hellip;)</p>
+
+<p>One possibility, which doesn&rsquo;t meet all the requirements, but is interesting all the same, is <a href="http://tiddlywiki.com/">TiddlyWiki</a>.  I&rsquo;ve tried TiddlyWiki before, using it while trying to <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">Get Things Done</a>.  The idea is that you have a single html page, no server, providing a wiki, and any modifications get saved out to the same html page.  There&rsquo;s no versioning, but rather than operating at the level of wiki &lsquo;pages&rsquo;, you create notes instead.  You can have several open for viewing or editing at once.</p>
+
+<p>It all works pretty well, at least in Firefox with the <a href="https://addons.mozilla.org/en-US/firefox/addon/tiddlyfox/">TiddlyFox</a> extension to enable TiddlyWiki to save itself.  I had issues using Chrome on my Mac, so stuck to Firefox.</p>
+
+<p>For whatever reason, I didn&rsquo;t use it for very long, but recently I noticed that a rewrite is in progress, so took another look.  <a href="http://five.tiddlywiki.com/">TiddyWiki5</a> can be used without a server as before, or served by node.js.  It&rsquo;s alpha, and I&rsquo;ve just started using it, so it&rsquo;s way too early to comment much on it, but it looks promising.  Using it as a standalone HTML file on Chrome still seems to have issues, and unfortunately Firefox still needs the TiddlyFox extension to work well.  You also need to remember to save before quitting.</p>
+
+<p>Anyway, this post was a bit more rambling than I intended (even moreso now&hellip;), but this is an area that interests me, so hopefully I can write a bit more about how I get on with TiddlyWiki5, maybe a bit about Ward Cunningham&rsquo;s <a href="https://github.com/WardCunningham/Smallest-Federated-Wiki">Smallest Federated Wiki</a> (I saw an excellent presentation by him about his new wiki at QCon London earlier in the year), and maybe even a little about my own work in this area, if it ever gets far enough along to talk about.</p>
+]]></content>
+  </entry>
+  
+</feed>

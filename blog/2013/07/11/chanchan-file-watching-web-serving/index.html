@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Switched to Octopress - Graham MacDonald</title>
+	<title>ChanChan: File watching + web serving - Graham MacDonald</title>
 	<meta name="author" content="Graham MacDonald">
 
 	
-	<meta name="description" content="Switched from my own static blog generator, ChanChan, to Octopress. Writing it was a nice exercise, but I don&rsquo;t want to spent any more time &hellip;">
+	<meta name="description" content="">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,10 +78,14 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Switched to Octopress</h2>
-	<div class="entry-content"><p>Switched from my own static blog generator, ChanChan, to Octopress.  Writing it was a nice exercise, but I don&rsquo;t want to spent any more time maintaining it!</p>
+	<h2 class="title">ChanChan: File Watching + Web Serving</h2>
+	<div class="entry-content"><p>I&rsquo;ve just comitted a new version of <a href="https://github.com/gmacd/chanchan/releases/tag/0.2">ChanChan (0.2)</a> to github.  This relase is pretty small in terms of code changes, but adds some useful functionality:</p>
 
-<p>Need to import my old posts and choose a better theme&hellip;</p>
+<ul>
+<li><strong>Webserver</strong>: ChanChan now uses ring to setup a webserver to serve the blog on port 3000.  There&rsquo;s currently no fallback if this port is unavailable.  To start the server, use <code>lein run</code>.</li>
+<li><strong>File watching</strong>: ChanChan will watch the posts folder for any new or modified posts and convert them automatically.</li>
+</ul>
+
 </div>
 
 
@@ -98,11 +102,11 @@
   
 
 
-<time datetime="2013-11-17T00:29:00+00:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time></div>
+<time datetime="2013-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2013</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/blog/'>blog</a>
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>
 
 
 </div>
@@ -125,12 +129,6 @@
 </div>
 
 
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -150,10 +148,7 @@
       var disqus_shortname = 'gmacd';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://gmacd.github.io/blog/2013/11/17/switched-to-octopress/';
-        var disqus_url = 'http://gmacd.github.io/blog/2013/11/17/switched-to-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -113,6 +113,496 @@
 <time datetime="2013-11-17T00:29:00+00:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time></div>
 	<div class="tags">
 
+
+	<a class='category' href='/blog/categories/blog/'>blog</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/14/orwell-quote/">
+		
+			Orwell&#8217;s Rules of Writing</a>
+	</h2>
+	<div class="entry-content">
+		<p>From &lsquo;<a href="https://www.mtholyoke.edu/acad/intrel/orwell46.htm">Politics and the English Language</a>&rsquo;</p>
+
+<ol>
+<li><p>Never use a metaphor, simile, or other figure of speech which you are used to seeing in print.</p></li>
+<li><p>Never use a long word where a short one will do.</p></li>
+<li><p>If it is possible to cut a word out, always cut it out.</p></li>
+<li><p>Never use the passive where you can use the active.</p></li>
+<li><p>Never use a foreign phrase, a scientific word, or a jargon word if you can think of an everyday English equivalent.</p></li>
+<li><p>Break any of these rules sooner than say anything outright barbarous.</p></li>
+</ol>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-14T00:00:00+00:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/writing/'>writing</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/31/kossel-nuts-n-bolts/">
+		
+			Kossel Second Post!</a>
+	</h2>
+	<div class="entry-content">
+		<p>So it&rsquo;s now day 2 of the Mini Kossel build and I have&hellip;.  nuts and bolts:</p>
+
+<p><img src="/images/nuts-n-bolts.jpg" alt="Nuts+Bolts" /></p>
+
+<p>Still rather a long way to go, but this should be all the nuts and bolts I need for the build (and then some!).</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T00:00:00+01:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kossel/'>kossel</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/30/kossel-traxxas/">
+		
+			Kossel First Post!</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/traxxas.jpg" alt="Traxxas 5347" /></p>
+
+<p>I&rsquo;ve decided to build a Kossel Mini delta 3D printer.  This is the first part that&rsquo;s been delivered.  It&rsquo;ll be a long time before I&rsquo;ll complete this, but I&rsquo;ve ordered some of the parts, and I plan on keeping a build log here.</p>
+
+<p>You can see more about the <a href="http://deltabot.tumblr.com">Mini Kossel here</a>.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-30T00:00:00+01:00" pubdate data-updated="true">Jul 30<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kossel/'>kossel</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/19/file-attributes-in-clojure/">
+		
+			File Attributes in Clojure</a>
+	</h2>
+	<div class="entry-content">
+		<p>While writing <a href="https://github.com/gmacd/chanchan">ChanChan</a> I wanted to get the creation time of a file.  <code>java.io.File</code> only gives you the last modified time, which isn&rsquo;t quite what I was after.  Java 7 has <code>BasicFileAttributes</code>, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call <code>Files.readAttributes</code>.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I&rsquo;m putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct &ndash; it&rsquo;s been edited from my original code&hellip;).</p>
+
+<div>
+  <pre><code class='clojure'>(ns foo
+  (:require [clojure.java.io :as jio])
+  (:import (java.nio.file Files LinkOption)
+           (java.nio.file.attribute BasicFileAttributes)))
+
+(defn file-attributes [file]
+  &quot;Return the file BasicFileAttributes of file.  File can be a file or a string
+   (or anything else acceptable to jio/file)&quot;
+  (Files/readAttributes (.toPath (jio/file file))
+                        BasicFileAttributes
+                        (into-array LinkOption [])))</code></pre>
+</div>
+
+
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-19T00:00:00+01:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/15/chanchan-posts-listed-on-front-page/">
+		
+			ChanChan: Posts Listed on Front Page</a>
+	</h2>
+	<div class="entry-content">
+		<p>A bit more work has been done on ChanChan, enough to merit a new tag &ndash; <a href="https://github.com/gmacd/chanchan/releases/tag/0.3">0.3</a>!</p>
+
+<p>The fundamental change is that ChanChan now shows a list of links on the front page to all the posts.  In making this change, quite a few of the functions have been modified, making it a bit easier to reuse useful data at different points in the post conversion pipeline.</p>
+
+<p>A couple of random thoughts occured to be while making these changes:
+* Clojure functions tend to be small.
+* I have to put a lot of thought into how best to write the code, or how best to change it.  I&rsquo;ve never written a static web page generator before, but I imagine I could knock one up in C# (the main language I use at work) pretty quickly.  I&rsquo;m not sure if I&rsquo;m taking more time due to my relative lack of familiarity with the language, or if it&rsquo;s a more general side-effect of functional or lisp programming.
+* .Net has much better facilities for operating on paths.  Or maybe Java/Clojure has better facilities that I&rsquo;m not aware of&hellip;
+* I&rsquo;m pleased with the size of the codebase.  It&rsquo;s currently running at 107 lines of code, with comments, docstrings and empty lines (HTML templates excluded).  I&rsquo;m not actively trying to minimize the number of lines used, but I&rsquo;d like to get a minimal useful site generator fitting comfortably into a single Clojure file without it feeling forced or being detrimental to understanding the code.</p>
+
+<p>Looking forward, the next step is to add some metadata to the posts and begin to extract it.  I&rsquo;m thinking of post titles initially, and then perhaps tags.  Unfortunately, Markdown doesn&rsquo;t seem to support metadata by default, although there appear to be some extensions that support this.  Time for some googling&hellip;</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-15T00:00:00+01:00" pubdate data-updated="true">Jul 15<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/11/chanchan-file-watching-web-serving/">
+		
+			ChanChan: File Watching + Web Serving</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&rsquo;ve just comitted a new version of <a href="https://github.com/gmacd/chanchan/releases/tag/0.2">ChanChan (0.2)</a> to github.  This relase is pretty small in terms of code changes, but adds some useful functionality:</p>
+
+<ul>
+<li><strong>Webserver</strong>: ChanChan now uses ring to setup a webserver to serve the blog on port 3000.  There&rsquo;s currently no fallback if this port is unavailable.  To start the server, use <code>lein run</code>.</li>
+<li><strong>File watching</strong>: ChanChan will watch the posts folder for any new or modified posts and convert them automatically.</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/07/chanchan/">
+		
+			ChanChan</a>
+	</h2>
+	<div class="entry-content">
+		<p>I just spent the last 30 mins trying to get the Clojure code below to be nicely syntax highlighted in Jekyll. It turned out to require me to use the tag <code>highlight clojure</code> to mark the code to be highlighted.  Once that was done, it would silently fail to colour the text until I copied a css file for syntax highlighting that I had to download from somewhere, and put it in one of the several locations in my Jekyll/blog folder.</p>
+
+<p>Not really the end of the world, but actually a bit comforting, since I decided to write my own static blog generator yesterday.</p>
+
+<p>It&rsquo;s called ChanChan, named after my daughter&rsquo;s toy rabbit, because why not?  It&rsquo;s written in Clojure, because, again, why not?  Actually, there&rsquo;s more reason than that &ndash; I rather like Clojure, don&rsquo;t use it at work, and was looking for something to write with it.</p>
+
+<p>It&rsquo;s very early days, but I plan on keeping a journal of the development here.  Currently, it assumes all posts are written in Markdown, and in the folder <code>assets/posts</code>.  It picks up all the <code>.md</code> files in that folder, converts them to html, and writes them to <code>site/posts</code>.</p>
+
+<p>The code for this release can be found on <a href="https://github.com/gmacd/chanchan/releases/tag/0.1">github</a>, or you can see the the code in its entirity below.</p>
+
+<div>
+  <pre><code class='clojure'>(ns blog.core
+  [:require [clojure.java.io :as jio]]
+  [:use [markdown.core :only [md-to-html-string]]]
+  [:use [hiccup core page]])
+
+(def src-posts-path &quot;assets/posts&quot;)
+(def dest-posts-path &quot;site/posts&quot;)
+
+(defn html-post [title body]
+  (html5 [:head
+          [:link {:rel &quot;stylesheet&quot; :type &quot;text/css&quot; :href &quot;../bootstrap/css/bootstrap.css&quot;}]
+          [:title title]]
+         [:body body]))
+
+(defn files-with-extension [src ext]
+  &quot;Return all files in src with the extension ext.  E.g. &#39;.md&#39;&quot;
+  (-&gt;&gt; (jio/file src)
+       (file-seq)
+       (filter #(.endsWith (.getName %) ext))))
+
+(defn with-ext [path ext]
+  &quot;Return a new file with the extension added or replaced with &#39;ext&#39;&quot;
+  (let [period-idx (.lastIndexOf path &quot;.&quot;)]
+    (if (not= period-idx -1)
+      (str (.substring path 0 period-idx) &quot;.&quot; ext)
+      (str path &quot;.&quot; ext))))
+
+(defn convert-md-file [src dest]
+  (let [md-contents (slurp src)]
+    (-&gt;&gt; md-contents
+         (md-to-html-string)
+         (html-post &quot;post?&quot;)
+         (spit dest))))
+
+(defn convert-all-md-files [src-path dest-path]
+  (let [src (jio/file src-path)
+        dest (jio/file dest-path)
+        md-files (files-with-extension src-path &quot;.md&quot;)]
+    (doseq [md-file md-files]
+      (let [dest-path (str dest-path &quot;/&quot; (with-ext (.getName md-file) &quot;html&quot;))]
+        (convert-md-file md-file dest-path)))))
+        
+(defn -main [&amp; args]
+  ; Bit of a hack to create the folder - better way?
+  (jio/make-parents (str dest-posts-path &quot;/x&quot;))
+  (convert-all-md-files src-posts-path dest-posts-path))</code></pre>
+</div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-07T00:00:00+01:00" pubdate data-updated="true">Jul 7<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>, <a class='category' href='/blog/categories/jekyll/'>jekyll</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/07/06/print-classpath-in-clojure/">
+		
+			Print Classpath in Clojure</a>
+	</h2>
+	<div class="entry-content">
+		<p>Print out the current classpath, line by line, in Clojure:</p>
+
+<p><code>(doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))</code></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-06T00:00:00+01:00" pubdate data-updated="true">Jul 6<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/clojure/'>clojure</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/06/18/procdump/">
+		
+			Procdump</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://technet.microsoft.com/en-us/sysinternals/dd996900">Procdump</a> can be used to get a crash dump for an process in varying circumstances.</p>
+
+<p>In my (test) case, my app is throwing NotImplementedException, and I want to create a crash dump when that is raised and not handled.  Once the process is running, and before the exception is raised, I hook procdump to my process using the following command:</p>
+
+<p><code>procdump -e -ma myapp.exe</code></p>
+
+<p>Note that myapp.exe is the name of the process &ndash; not the filepath.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-18T00:00:00+01:00" pubdate data-updated="true">Jun 18<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/debugging/'>debugging</a>
+
+
 </div>
 	
 </div>
@@ -120,6 +610,8 @@
 
 <nav id="pagenavi">
     
+    
+        <a href="/blog/page/2/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>

@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Switched to Octopress - Graham MacDonald</title>
+	<title>File attributes in Clojure - Graham MacDonald</title>
 	<meta name="author" content="Graham MacDonald">
 
 	
-	<meta name="description" content="Switched from my own static blog generator, ChanChan, to Octopress. Writing it was a nice exercise, but I don&rsquo;t want to spent any more time &hellip;">
+	<meta name="description" content="">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,10 +78,25 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Switched to Octopress</h2>
-	<div class="entry-content"><p>Switched from my own static blog generator, ChanChan, to Octopress.  Writing it was a nice exercise, but I don&rsquo;t want to spent any more time maintaining it!</p>
+	<h2 class="title">File Attributes in Clojure</h2>
+	<div class="entry-content"><p>While writing <a href="https://github.com/gmacd/chanchan">ChanChan</a> I wanted to get the creation time of a file.  <code>java.io.File</code> only gives you the last modified time, which isn&rsquo;t quite what I was after.  Java 7 has <code>BasicFileAttributes</code>, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call <code>Files.readAttributes</code>.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I&rsquo;m putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct &ndash; it&rsquo;s been edited from my original code&hellip;).</p>
 
-<p>Need to import my old posts and choose a better theme&hellip;</p>
+<div>
+  <pre><code class='clojure'>(ns foo
+  (:require [clojure.java.io :as jio])
+  (:import (java.nio.file Files LinkOption)
+           (java.nio.file.attribute BasicFileAttributes)))
+
+(defn file-attributes [file]
+  &quot;Return the file BasicFileAttributes of file.  File can be a file or a string
+   (or anything else acceptable to jio/file)&quot;
+  (Files/readAttributes (.toPath (jio/file file))
+                        BasicFileAttributes
+                        (into-array LinkOption [])))</code></pre>
+</div>
+
+
+
 </div>
 
 
@@ -98,11 +113,11 @@
   
 
 
-<time datetime="2013-11-17T00:29:00+00:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time></div>
+<time datetime="2013-07-19T00:00:00+01:00" pubdate data-updated="true">Jul 19<span>th</span>, 2013</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/blog/'>blog</a>
+	<a class='category' href='/blog/categories/chanchan/'>chanchan</a>, <a class='category' href='/blog/categories/clojure/'>clojure</a>
 
 
 </div>
@@ -125,12 +140,6 @@
 </div>
 
 
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -150,10 +159,7 @@
       var disqus_shortname = 'gmacd';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://gmacd.github.io/blog/2013/11/17/switched-to-octopress/';
-        var disqus_url = 'http://gmacd.github.io/blog/2013/11/17/switched-to-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

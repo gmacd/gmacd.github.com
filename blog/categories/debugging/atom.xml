@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: debugging | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/debugging/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-11-17T08:57:29+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[procdump]]></title>
+    <link href="http://gmacd.github.io/blog/2013/06/18/procdump/"/>
+    <updated>2013-06-18T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/06/18/procdump</id>
+    <content type="html"><![CDATA[<p><a href="http://technet.microsoft.com/en-us/sysinternals/dd996900">Procdump</a> can be used to get a crash dump for an process in varying circumstances.</p>
+
+<p>In my (test) case, my app is throwing NotImplementedException, and I want to create a crash dump when that is raised and not handled.  Once the process is running, and before the exception is raised, I hook procdump to my process using the following command:</p>
+
+<p><code>procdump -e -ma myapp.exe</code></p>
+
+<p>Note that myapp.exe is the name of the process &ndash; not the filepath.</p>
+]]></content>
+  </entry>
+  
+</feed>
