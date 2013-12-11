@@ -4,7 +4,7 @@
   <title><![CDATA[Graham MacDonald]]></title>
   <link href="http://gmacd.github.io/atom.xml" rel="self"/>
   <link href="http://gmacd.github.io/"/>
-  <updated>2013-11-17T21:46:31+00:00</updated>
+  <updated>2013-12-11T21:14:17+00:00</updated>
   <id>http://gmacd.github.io/</id>
   <author>
     <name><![CDATA[Graham MacDonald]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rays]]></title>
+    <link href="http://gmacd.github.io/blog/2013/12/11/rays/"/>
+    <updated>2013-12-11T20:39:00+00:00</updated>
+    <id>http://gmacd.github.io/blog/2013/12/11/rays</id>
+    <content type="html"><![CDATA[<p>A few years ago I bought a very nice book on raytracing with the intention of implementing my own.  I’d previously followed part way through <a href="http://www.flipcode.com/archives/Raytracing_Topics_Techniques-Part_1_Introduction.shtml">this series of tutorials on flipcode</a>, and wanted to delve further.</p>
+
+<p>As might be seen from the pristine condition of my book, I didn’t get very far.</p>
+
+<p>Recently I thought I’d give it another go, but this time in <a href="http://golang.org">Go</a>.  First step would be to get a very basic ray tracer up and running before working through the books, so back to the tutorial.</p>
+
+<p>Here are the results of my efforts &ndash; the same image generated from the first article in the tutorial.</p>
+
+<p><img src="http://gmacd.github.io/images/2013-12-10-flipcode1.png" alt="Flipcode Balls" /></p>
+
+<p>You can find the code <a href="https://github.com/gmacd/rays">on Github here</a>.  I plan on at least following through the first three articles before moving onto the book, so I’ll post more shots and details here when they’re ready.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Conway's Game of Life in Dart]]></title>
