@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: makerbot | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/makerbot/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-12-11T21:14:17+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[First Print]]></title>
+    <link href="http://gmacd.github.io/blog/2013/05/25/first-print/"/>
+    <updated>2013-05-25T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/05/25/first-print</id>
+    <content type="html"><![CDATA[<p>After much fiddling (and wailing, and gnashing of teeth, and crashing of build platform) I&rsquo;ve managed to get the old Cupcake to complete its first print in about 3 years: a (shrunken) <a href="http://www.thingiverse.com/thing:2154">door stop</a>.  It&rsquo;s too small to be useful for our doors, but I&rsquo;m quite happy with it as a first print.</p>
+
+<p>It took a few hours of trial and error to get from the stage of being able to test the individual axes and the nozzle temperature to getting a complete print.  Most of the time was spent trying to find the appropriate version of <a href="http://replicat.org/">ReplicatorG</a> and the motherboard firmware.</p>
+
+<p>Of course my first try was with the latest and greatest ReplicatorG (040) and the latest version of the firmware that looked like it might work.  It didn&rsquo;t.  I could move the axes or change the temprature, but trying to build would hang ReplicatorG at the build estimation stage.  After a search, I found a suggestion of replacing all the E&lt;Num&gt; instances in the gcode with A&lt;Num&gt;, but this didn&rsquo;t work.</p>
+
+<p>After a bit more fiddling, and still no success, I tried <a href="http://www.makerbot.com/makerware/">Makerware</a>, by Makerbot.  I&rsquo;ve not being paying much attention to the 3D printer world, but it seems that Makerbot have pretty much abandoned the basic Cupcake.  Makerware doesn&rsquo;t support it, and they&rsquo;ve also removed their wiki, which had all the build &amp; setup instructions for their printers.  (You can <a href="http://www.makerbot.com/support/archive/">download it as an archive</a>, but that doesn&rsquo;t help when trying to search the web for anything in the wiki.)</p>
+
+<p>I then went back in time, trying out increasingly older versions of ReplicatorG and the firmware.  I eventually settled on version 025 of ReplicatorG, and the oldest version of the firmware it provided, which eventually resulted in this:</p>
+
+<p><img src="/images/first_print.jpg" alt="First Print: A (shrunken) door stop" /></p>
+
+<p>I might try to upgrade everything again, until I find the latest version I can use, but I&rsquo;m happy with this minimum for now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crimes Against Bank Balances]]></title>
+    <link href="http://gmacd.github.io/blog/2013/05/23/crimes-against-bank-balances/"/>
+    <updated>2013-05-23T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/05/23/crimes-against-bank-balances</id>
+    <content type="html"><![CDATA[<p>My wife recently said that I have a criminal record.  Of course, she didn&rsquo;t mean a <em>real</em> criminal record (I think)&hellip;</p>
+
+<p>What we were talking about was my tendency of occasionally spending relatively large sums of money on rather frivolous purchases.  E.g., an expensive camera that doesn&rsquo;t get used much, or this:</p>
+
+<p><img src="/images/makerbot_cupcake.jpg" alt="My Makerbot Cupcake" /></p>
+
+<p>I bought a <a href="http://en.wikipedia.org/wiki/MakerBot_Industries#Cupcake_CNC">Makerbot Cupcake</a> in April 2010.  I played around with it a bit, but got a bit disheartened with the fiddliness and what I felt was a lack of precision in the prints.  For the last 3 years it&rsquo;s been languishing in a cupboard.</p>
+
+<p>Recently I&rsquo;ve been maybe feeling a little guilty about my poor Cupcake.  A little more pertinently, I&rsquo;ve also been looking at videos of newer <a href="http://reprap.org">RepRap</a> models and fancy building one from scratch.  So in the hope of building some of the plastic parts for a shiny new <a href="http://reprap.org/wiki/Mendel">Mendel</a> or perhaps a  <a href="http://reprap.org/wiki/Huxley">Huxley</a>, I&rsquo;ve dug out the old one and fired it up.  All the components seem to still work, but I haven&rsquo;t printed anything with it yet.  Hopefully tonight&hellip;</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: simplicity | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/simplicity/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-12-11T21:14:17+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Wirth, Oberon and Simplicity]]></title>
+    <link href="http://gmacd.github.io/blog/2013/04/25/wirth-oberon-and-simplicity/"/>
+    <updated>2013-04-25T00:00:00+01:00</updated>
+    <id>http://gmacd.github.io/blog/2013/04/25/wirth-oberon-and-simplicity</id>
+    <content type="html"><![CDATA[<p>Today I read a very interesting bit of computing science history, about Niklaus Wirth and the Oberon language/system: <a href="https://www.ics.uci.edu/~franz/Site/pubs-pdf/BC03.pdf">&lsquo;Oberon &ndash; The Overlooked Jewel&rsquo;</a>.</p>
+
+<p>I&rsquo;ve never written any Pascal &ndash; back in my school days, we were writing <a href="http://en.wikipedia.org/wiki/COMAL">COMAL</a> on the BBC Micro (for some strange reason), when other kids would have been using Pascal.  I&rsquo;d heard of it of course, believing it to be a more structured Basic.  I&rsquo;d heard of Niklaus Wirth as the creator of Pascal, and I&rsquo;d heard of Modula and Oberon, but I really didn&rsquo;t know much more than that.</p>
+
+<p>It&rsquo;s quite understandable then, that the paper begins by describing with regret how Wirth is known as the creator of Pascal and as a &lsquo;language and compiler guy&rsquo; to the detriment of his other claims to fame.</p>
+
+<p>The description of the Oberon system is fascinating, but what interested me in particular was the discussion of Wirth&rsquo;s determined efforts towards simplicity.  The comparison of Wirth&rsquo;s Modula-2 and Oberon compilers against more complex compilers reminds me of <a href="http://golang.org/">Go</a> with its incredibly fast compile times versus your typical modern day C++ compiler.</p>
+
+<p>The use of self-compilation speed as a benchmark seems like a great way to target and then maintain a balance between complexity and the performance benefits of optimizations in a compiler.  Complex optimizations where the cost of optimization in terms of code complexity, outweigh the benefits of faster binaries could be clearly recognised with such a metric.  Perhaps there are more creative benchmarks we can use in other applications?</p>
+
+<p>Another example of the struggle for simplicity is the description of Wirth removing a working high performance, elegant, but complex data structure from the compiler and replacing it with a linear list, despite the effort that had been spent on the more complex solution.  This data structure should have performed better, but the cost of its complexity was too high and the actual use case didn&rsquo;t play to its strengths.  The simpler solution turned out to be both smaller and faster in general use.</p>
+
+<p>I&rsquo;m a big believer in the benefits of simplicity over complexity in most cases, but it&rsquo;s rather hard to express it other than as instinct or experience.  The use of the self-compilation speed benchmark was able to highlight the cases where the complexity outweighed the benefit in a compiler, but at the moment I&rsquo;m not sure of a good way to highlight these cases in a more general application.  There&rsquo;s still plenty of room for instinct and experience!</p>
+]]></content>
+  </entry>
+  
+</feed>

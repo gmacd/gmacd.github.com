@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: writing | Graham MacDonald]]></title>
+  <link href="http://gmacd.github.io/blog/categories/writing/atom.xml" rel="self"/>
+  <link href="http://gmacd.github.io/"/>
+  <updated>2013-12-11T21:14:17+00:00</updated>
+  <id>http://gmacd.github.io/</id>
+  <author>
+    <name><![CDATA[Graham MacDonald]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Orwell's Rules of Writing]]></title>
+    <link href="http://gmacd.github.io/blog/2013/11/14/orwell-quote/"/>
+    <updated>2013-11-14T00:00:00+00:00</updated>
+    <id>http://gmacd.github.io/blog/2013/11/14/orwell-quote</id>
+    <content type="html"><![CDATA[<p>From &lsquo;<a href="https://www.mtholyoke.edu/acad/intrel/orwell46.htm">Politics and the English Language</a>&rsquo;</p>
+
+<ol>
+<li><p>Never use a metaphor, simile, or other figure of speech which you are used to seeing in print.</p></li>
+<li><p>Never use a long word where a short one will do.</p></li>
+<li><p>If it is possible to cut a word out, always cut it out.</p></li>
+<li><p>Never use the passive where you can use the active.</p></li>
+<li><p>Never use a foreign phrase, a scientific word, or a jargon word if you can think of an everyday English equivalent.</p></li>
+<li><p>Break any of these rules sooner than say anything outright barbarous.</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
