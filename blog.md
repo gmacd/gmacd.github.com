@@ -1,9 +1,5 @@
 ---
-layout: post
 title: "Wirth, Oberon and Simplicity"
-description: ""
-comments: true
-categories: [simplicity]
 date: 2013-04-25
 ---
 Today I read a very interesting bit of computing science history, about Niklaus Wirth and the Oberon language/system: ['Oberon - The Overlooked Jewel'](https://www.ics.uci.edu/~franz/Site/pubs-pdf/BC03.pdf).
@@ -20,11 +16,7 @@ Another example of the struggle for simplicity is the description of Wirth remov
 
 I'm a big believer in the benefits of simplicity over complexity in most cases, but it's rather hard to express it other than as instinct or experience.  The use of the self-compilation speed benchmark was able to highlight the cases where the complexity outweighed the benefit in a compiler, but at the moment I'm not sure of a good way to highlight these cases in a more general application.  There's still plenty of room for instinct and experience!
 ---
-layout: post
 title: "TODO: Wiki"
-description: ""
-comments: true
-categories: [todo, wiki]
 date: 2013-05-18
 ---
 One of my preferred ways of procrastinating is thinking about organising todo lists (the programmer in me wrote 'TODO' there and had to go back and change it - disappointed it's not syntax highlighted here...).  I'd like to combine todo lists with more general notes, documents, my calendar, etc., and have it all versioned too.  Oh, and it should be cross platform and the data should be accessible and up to date from home, work or anywhere else.  And it should be secure.  I'd like to be able to do some spreadsheet-like data manipulation and graphing too.
@@ -41,11 +33,7 @@ For whatever reason, I didn't use it for very long, but recently I noticed that 
 
 Anyway, this post was a bit more rambling than I intended (even moreso now...), but this is an area that interests me, so hopefully I can write a bit more about how I get on with TiddlyWiki5, maybe a bit about Ward Cunningham's [Smallest Federated Wiki](https://github.com/WardCunningham/Smallest-Federated-Wiki) (I saw an excellent presentation by him about his new wiki at QCon London earlier in the year), and maybe even a little about my own work in this area, if it ever gets far enough along to talk about.
 ---
-layout: post
 title: "Crimes Against Bank Balances"
-description: ""
-comments: true
-categories: [3dprinter, makerbot, cupcake, reprap]
 date: 2013-05-23
 ---
 My wife recently said that I have a criminal record.  Of course, she didn't mean a *real* criminal record (I think)...
@@ -58,11 +46,7 @@ I bought a [Makerbot Cupcake](http://en.wikipedia.org/wiki/MakerBot_Industries#C
 
 Recently I've been maybe feeling a little guilty about my poor Cupcake.  A little more pertinently, I've also been looking at videos of newer [RepRap](http://reprap.org) models and fancy building one from scratch.  So in the hope of building some of the plastic parts for a shiny new [Mendel](http://reprap.org/wiki/Mendel) or perhaps a  [Huxley](http://reprap.org/wiki/Huxley), I've dug out the old one and fired it up.  All the components seem to still work, but I haven't printed anything with it yet.  Hopefully tonight...
 ---
-layout: post
 title: "First Print"
-description: ""
-comments: true
-categories: [3dprinter, makerbot, cupcake]
 date: 2013-05-25
 ---
 After much fiddling (and wailing, and gnashing of teeth, and crashing of build platform) I've managed to get the old Cupcake to complete its first print in about 3 years: a (shrunken) [door stop](http://www.thingiverse.com/thing:2154).  It's too small to be useful for our doors, but I'm quite happy with it as a first print.
@@ -79,11 +63,7 @@ I then went back in time, trying out increasingly older versions of ReplicatorG 
 
 I might try to upgrade everything again, until I find the latest version I can use, but I'm happy with this minimum for now.
 ---
-layout: post
 title: "procdump"
-description: ""
-comments: true
-categories: [debugging]
 date: 2013-06-18
 ---
 [Procdump](http://technet.microsoft.com/en-us/sysinternals/dd996900) can be used to get a crash dump for an process in varying circumstances.
@@ -94,11 +74,7 @@ In my (test) case, my app is throwing NotImplementedException, and I want to cre
 
 Note that myapp.exe is the name of the process - not the filepath.
 ---
-layout: post
 title: "Print Classpath in Clojure"
-description: ""
-comments: true
-categories: [clojure]
 date: 2013-07-06
 ---
 Print out the current classpath, line by line, in Clojure:
@@ -107,11 +83,7 @@ Print out the current classpath, line by line, in Clojure:
 (doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))
 ```
 ---
-layout: post
 title: "ChanChan"
-description: ""
-comments: true
-categories: [clojure, chanchan, jekyll]
 date: 2013-07-07
 ---
 I just spent the last 30 mins trying to get the Clojure code below to be nicely syntax highlighted in Jekyll. It turned out to require me to use the tag `highlight clojure` to mark the code to be highlighted.  Once that was done, it would silently fail to colour the text until I copied a css file for syntax highlighting that I had to download from somewhere, and put it in one of the several locations in my Jekyll/blog folder.
@@ -167,7 +139,7 @@ The code for this release can be found on [github](https://github.com/gmacd/chan
     (doseq [md-file md-files]
       (let [dest-path (str dest-path "/" (with-ext (.getName md-file) "html"))]
         (convert-md-file md-file dest-path)))))
-        
+
 (defn -main [& args]
   ; Bit of a hack to create the folder - better way?
   (jio/make-parents (str dest-posts-path "/x"))
@@ -175,11 +147,7 @@ The code for this release can be found on [github](https://github.com/gmacd/chan
 
 ```
 ---
-layout: post
 title: "ChanChan: File watching + web serving"
-description: ""
-comments: true
-categories: [clojure, chanchan]
 date: 2013-07-11
 ---
 I've just comitted a new version of [ChanChan (0.2)](https://github.com/gmacd/chanchan/releases/tag/0.2) to github.  This relase is pretty small in terms of code changes, but adds some useful functionality:
@@ -187,11 +155,7 @@ I've just comitted a new version of [ChanChan (0.2)](https://github.com/gmacd/ch
 * **Webserver**: ChanChan now uses ring to setup a webserver to serve the blog on port 3000.  There's currently no fallback if this port is unavailable.  To start the server, use `lein run`.
 * **File watching**: ChanChan will watch the posts folder for any new or modified posts and convert them automatically.
 ---
-layout: post
 title: "ChanChan: Posts listed on front page"
-description: ""
-comments: true
-categories: [clojure, chanchan]
 date: 2013-07-15
 ---
 A bit more work has been done on ChanChan, enough to merit a new tag - [0.3](https://github.com/gmacd/chanchan/releases/tag/0.3)!
@@ -206,11 +170,7 @@ A couple of random thoughts occured to be while making these changes:
 
 Looking forward, the next step is to add some metadata to the posts and begin to extract it.  I'm thinking of post titles initially, and then perhaps tags.  Unfortunately, Markdown doesn't seem to support metadata by default, although there appear to be some extensions that support this.  Time for some googling...
 ---
-layout: post
 title: "File attributes in Clojure"
-description: ""
-comments: true
-categories: [clojure, chanchan]
 date: 2013-07-19
 ---
 While writing [ChanChan](https://github.com/gmacd/chanchan) I wanted to get the creation time of a file.  `java.io.File` only gives you the last modified time, which isn't quite what I was after.  Java 7 has `BasicFileAttributes`, from which you can access the creation time, last modified time, size, etc.  To get an instance of this interface, you need to call `Files.readAttributes`.  This turned out to be quite fiddly in Clojure (at least for me, a relative newcomer!), so I'm putting to here in case anyone else is looking for it.  (Hopefully the namespace is correct - it's been edited from my original code...).
@@ -231,11 +191,7 @@ While writing [ChanChan](https://github.com/gmacd/chanchan) I wanted to get the 
 
 ```
 ---
-layout: post
 title: "Kossel First Post!"
-description: ""
-comments: true
-categories: [kossel]
 date: 2013-07-30
 ---
 ![Traxxas 5347](/images/traxxas.jpg)
@@ -244,11 +200,7 @@ I've decided to build a Kossel Mini delta 3D printer.  This is the first part th
 
 You can see more about the [Mini Kossel here](http://deltabot.tumblr.com).
 ---
-layout: post
 title: "Kossel Second Post!"
-description: ""
-comments: true
-categories: [kossel]
 date: 2013-07-31
 ---
 So it's now day 2 of the Mini Kossel build and I have....  nuts and bolts:
@@ -257,11 +209,7 @@ So it's now day 2 of the Mini Kossel build and I have....  nuts and bolts:
 
 Still rather a long way to go, but this should be all the nuts and bolts I need for the build (and then some!).
 ---
-layout: post
 title: "Orwell's Rules of Writing"
-description: ""
-comments: true
-categories: [writing]
 date: 2013-11-14
 ---
 
@@ -279,12 +227,8 @@ From '[Politics and the English Language](https://www.mtholyoke.edu/acad/intrel/
 
 6. Break any of these rules sooner than say anything outright barbarous.
 ---
-layout: post
 title: "Random Opinions on Dart"
 date: 2013-11-17 09:06
-comments: true
-categories: [dart]
-published: true
 ---
 A year or so ago, I took a look at Dart, Google's Javascript alternative (depending on how you look at it).  It didn't stick with me back then, but seeing Angular.dart made me want to try it out again, and I've been pretty pleased with what I've seen so far.
 
@@ -303,21 +247,15 @@ So here are some random things I've found out while writing a little toy in Dart
 - You can create simple constructors very concisely, though I find it a little strange.  I'm sure I'll get used to it.
 - To build your app for deployment, you run 'pub build'.  Unfortunately, this didn't work for me.  I think it's because the standard library and Angular.dart were throwing up warnings - they probably shouldn't.
 ---
-layout: post
 title: "Conway's Game of Life in Dart"
 date: 2013-11-17 21:36
-comments: true
-categories: [dart, angular]
 ---
 While playing around with Dart, I implemented [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  It was also a good excuse to try out Angular.
 
 I haven't put a live demo up yet, but you can [grab the source here.](https://github.com/gmacd/dartlife)
 ---
-layout: post
 title: "Switched to Octopress"
 date: 2013-11-17 00:29
-comments: true
-categories: [blog]
 ---
 Switched from my own static blog generator, ChanChan, to Octopress.  Writing it was a nice exercise, but I don't want to spent any more time maintaining it!
 
