@@ -1,7 +1,9 @@
-Title: Graham MacDonald's Neglected Blog
-SiteCss: style.css
++++
+date = "2014-11-09T07:54:46Z"
+draft = true
+title = "about"
 
-/////
++++
 
 Graham MacDonald's Neglected Blog
 =================================
@@ -10,12 +12,3 @@ Some misguided thoughts from the addled brain of Graham MacDonald.  Hopefully so
 
 why the lucky stiff ([via Brett Victor](http://worrydream.com/#!/quotes)):
 when you don't create things, you become defined by your tastes rather than ability. your tastes only narrow & exclude people. so create
-
-Posts
------
-
-Ooooh, nothing to see here.
-
-<div>
-{{.PagesFrom "posts/*"}}
-</div>
