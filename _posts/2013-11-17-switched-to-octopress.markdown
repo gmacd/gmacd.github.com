@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Switched to Octopress"
+cover: cover.jpg
 date: 2013-11-17 00:29
 comments: true
 categories: [blog]

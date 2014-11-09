@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Kossel Second Post!"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [kossel]

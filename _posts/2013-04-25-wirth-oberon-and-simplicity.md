@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Wirth, Oberon and Simplicity"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [simplicity]

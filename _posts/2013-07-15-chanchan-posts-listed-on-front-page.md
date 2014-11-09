@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ChanChan: Posts listed on front page"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [clojure, chanchan]

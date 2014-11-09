@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "File attributes in Clojure"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [clojure, chanchan]

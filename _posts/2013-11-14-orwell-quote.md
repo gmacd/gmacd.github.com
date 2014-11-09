@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Orwell's Rules of Writing"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [writing]

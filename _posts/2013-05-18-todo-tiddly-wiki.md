@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "TODO: Wiki"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [todo, wiki]

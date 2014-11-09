@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Print Classpath in Clojure"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [clojure]

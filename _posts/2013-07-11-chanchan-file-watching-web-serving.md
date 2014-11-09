@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ChanChan: File watching + web serving"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [clojure, chanchan]

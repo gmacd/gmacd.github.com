@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Random Opinions on Dart"
+cover: cover.jpg
 date: 2013-11-17 09:06
 comments: true
 categories: [dart]

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Crimes Against Bank Balances"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [3dprinter, makerbot, cupcake, reprap]

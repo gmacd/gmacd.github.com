@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "First Print"
+cover: cover.jpg
 description: ""
 comments: true
 categories: [3dprinter, makerbot, cupcake]
