@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Random Opinions on Dart"
+date: 2013-11-17 09:06
+comments: true
+categories: [dart]
+published: true
+---
+A year or so ago, I took a look at Dart, Google's Javascript alternative (depending on how you look at it).  It didn't stick with me back then, but seeing Angular.dart made me want to try it out again, and I've been pretty pleased with what I've seen so far.
+
+I hadn't used Angular.js before, but I've done a fair bit of WPF, and the concepts seem similar.  I'm not going to go into it in detail, but it seems to share some pros and cons with WPF - a powerful way of hooking a UI up to some controller code, but not much help with errors in the markup.
+
+As for Dart, it seems a bit more polished these days - version 1.0 of the SDK was released a couple of days ago.  Language-wise, there's not much new, but TBH, given the intention seems to have been to create an accessible Javascript alternative, with none of the legacy craziness of js, that's not surprising.  Anyone familiar with C#, Java, Javascript or any number of mainstream languages won't find it too hard to pick up.
+
+So here are some random things I've found out while writing a little toy in Dart (Conway's Game of Life):
+
+- First of all, it's fun!  It's very accessible, with a nice rapid turnaround.
+- It's much nicer than Javascript.  Modules!
+- The IDE is pretty good, but it's still Eclipse, so some people will hate it.  I don't mind it too much - it's got a quick fix to auto-import, and a functioning debugger, which more than makes up for any shortfalls.  OTOH, the way it handles editor window tabbing (by default at least), is different to just about everything, and is also worse.
+- There's a typedef keyword, but it only seems to apply to function types.  Type aliases would be useful, but I haven't seen any yet.
+- The standard library seems pretty good, and has nice LINQ-type functionality.
+- No multi-dimensional arrays.  In fact, no arrays - just List<T>, which has the same terribly deceptive name as C#.  It's not a list, it's an array with some listy methods.
+- You can create simple constructors very concisely, though I find it a little strange.  I'm sure I'll get used to it.
+- To build your app for deployment, you run 'pub build'.  Unfortunately, this didn't work for me.  I think it's because the standard library and Angular.dart were throwing up warnings - they probably shouldn't.
