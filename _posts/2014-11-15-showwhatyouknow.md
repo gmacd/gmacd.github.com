@@ -8,7 +8,7 @@ categories: [mooc]
 ---
 Having looked at what's on offer on Coursera (mainly), but also on Udacity, edX and FutureLearn, it seems that a lot of the courses I was interested in follow academic terms.  That means that finding a course starting around mid-November is tough.  I don't want to begin a course where I've missed deadlines before I've watched my first video, and I don't want to wait a month.
 
-Luckily, there are some interesting course on Udacity which allow you to start whenever you want, and follow at your own pace (very useful when you have a full time job and two kids to entertain!).  You lose the pressure of deadlines, but you gain flexibility.
+Luckily, there are some interesting courses on Udacity which allow you to start whenever you want and follow at your own pace (very useful when you have a full time job and two kids to entertain!).  You lose the pressure of deadlines, but you gain flexibility.
 
 Another difference seems to be that Udacity only offers you certificates if you pay for the course, whereas Coursera will offer you one for free.
 
