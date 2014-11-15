@@ -12,7 +12,7 @@ I wanted to get started quickly, but as I mentioned in my [previous post](/mooc/
 
 Another important point is ensuring I don't commit to too many overlapping courses - I really don't have time to do more than one course simultaneously for long.
 
-Finally, I want to spend a bit of time experimenting with BEAM robotics at some point.  I haven't found any courses that cover this, beyond electronics, so I'll have to do that myself.
+Finally, I want to spend a bit of time experimenting with [BEAM robotics](http://en.wikipedia.org/wiki/BEAM_robotics) at some point.  I haven't found any courses that cover this, beyond electronics, so I'll have to do that myself.
 
 Curriculum
 ----------
