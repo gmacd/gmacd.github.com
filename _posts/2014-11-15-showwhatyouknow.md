@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Show what you know"
-date: 2014-11-14 09:08
+date: 2014-11-15 09:08
 cover: cover.jpg
 comments: true
 categories: [mooc]
