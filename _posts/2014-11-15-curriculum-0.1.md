@@ -18,9 +18,11 @@ Curriculum
 ----------
 
 So far I've started:
+
 * [Machine Learning: Supervised Learning](https://www.udacity.com/course/ud675) (Udacity, any time, 8 weeks)
 
 Here are some upcoming courses:
+
 * [Machine Learning: Unsupervised Learning](https://www.udacity.com/course/ud741) (Udacity, any time, 4 weeks)
 * [Machine Learning: Reinforcement Learning](https://www.udacity.com/course/ud820) (Udacity, any time, 4 weeks)
 * [Light, Spike, and Sight: The Neuroscience of Vision](https://www.edx.org/course/mitx/mitx-9-01-1x-light-spike-sight-3196) (edX, 18th November 2014, 9 weeks)
