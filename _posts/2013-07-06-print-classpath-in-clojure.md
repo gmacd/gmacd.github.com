@@ -9,6 +9,8 @@ date: 2013-07-06
 ---
 Print out the current classpath, line by line, in Clojure:
 
-``` clojure
+{% highlight clojure linenos %}
+
 (doseq [line (.getURLs (java.lang.ClassLoader/getSystemClassLoader))] (prn line))
-```
+
+{% endhighlight %}
