@@ -12,7 +12,7 @@ The renderer runs in separate goroutine (linked to the main thread to keep OpenG
 
 The code is in two parts - the first is the main func that starts the renderer and posts frames of yellow noise (a common use case).  The second piece of code is the renderer.
 
-* Main Func
+## Main Func
 
 {% highlight go linenos %}
 package main
@@ -50,7 +50,7 @@ func main() {
 
 {% endhighlight %}
 
-* Renderer
+## Renderer
 
 {% highlight go linenos %}
 package support
