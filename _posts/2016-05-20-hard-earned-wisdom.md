@@ -9,6 +9,7 @@ categories:
 I found this post today, written in April 2015, but never posted.  It was written after a period of frustration with the system and environment I was working with.  (I should probably try to summarize all I learned over the 2 years at that project sometime soon - this covers the first 9 months or so.)
 
 So here they are, little pearls of unedited wisdom:
+
 * The real reason for doing something in a certain way isn't always for the best of the team or product.
 * When you get to the point where smart people don't understand fundamental parts of the code because of complexity, you have a problem.
 * When you have too many layers of abstraction, you add to the problems.
