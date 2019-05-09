@@ -1,0 +1,15 @@
+[submodule "themes/lithium"]
+	path = themes/lithium
+	url = https://github.com/jrutheiser/hugo-lithium-theme.git
+[submodule "themes/paperback"]
+	path = themes/paperback
+	url = https://github.com/damiencaselli/paperback.git
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "themes/minimal"]
+	path = themes/minimal
+	url = https://github.com/calintat/minimal.git
+[submodule "themes/tale"]
+	path = themes/tale
+	url = https://github.com/EmielH/tale-hugo.git
