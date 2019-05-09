@@ -1,7 +1,0 @@
-baseURL = "http://gmacd.net"
-title = "Graham MacDonald"
-theme = "tale"
-languageCode = "en-us"
-
-[Author]
-    name = "Graham MacDonald"
