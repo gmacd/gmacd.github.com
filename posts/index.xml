@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Graham MacDonald</title>
-    <link>http://gmacd.net/posts/</link>
-    <description>Recent content in Posts on Graham MacDonald</description>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Thu, 09 May 2019 22:16:01 +0100</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Feb 2020 21:22:06 +0000</lastBuildDate>
     
-	<atom:link href="http://gmacd.net/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Init</title>
-      <link>http://gmacd.net/posts/init/</link>
-      <pubDate>Thu, 09 May 2019 22:16:01 +0100</pubDate>
+      <title>My First Post</title>
+      <link>http://example.org/posts/my-first-post/</link>
+      <pubDate>Sat, 08 Feb 2020 21:22:06 +0000</pubDate>
       
-      <guid>http://gmacd.net/posts/init/</guid>
-      <description>fooooo</description>
+      <guid>http://example.org/posts/my-first-post/</guid>
+      <description>Fooooo</description>
     </item>
     
   </channel>
