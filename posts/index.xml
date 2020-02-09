@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts - Graham MacDonald</title>
-    <link>https://www.gmacd.net/posts/</link>
+    <link>https://gmacd.net/posts/</link>
     <description>Recent content in Posts on Graham MacDonald</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Sun, 09 Feb 2020 14:48:00 +0000</lastBuildDate>
     
-        <atom:link href="https://www.gmacd.net/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://gmacd.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Indie Web</title>
-      <link>https://www.gmacd.net/posts/indie-first/</link>
+      <link>https://gmacd.net/posts/indie-first/</link>
       <pubDate>Sun, 09 Feb 2020 14:48:00 +0000</pubDate>
       
-      <guid>https://www.gmacd.net/posts/indie-first/</guid>
+      <guid>https://gmacd.net/posts/indie-first/</guid>
       <description>Here&amp;rsquo;s an attempt to join the indie web. Partly this is to play around with tech, partly because I want to see if I can write something interesting, and partly because there are 4 shouty kids nearby and I need to distract myself.
 First step is this - a simple hugo blog, a simple theme, hosted on github pages.</description>
     </item>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags - Graham MacDonald</title>
-    <link>https://www.gmacd.net/tags/</link>
+    <link>https://gmacd.net/tags/</link>
     <description>Recent content in Tags on Graham MacDonald</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-        <atom:link href="https://www.gmacd.net/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://gmacd.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
