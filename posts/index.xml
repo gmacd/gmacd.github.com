@@ -11,10 +11,10 @@
     
     <item>
       <title>Indie Web</title>
-      <link>https://www.gmacd.net/posts/my-first-post/</link>
+      <link>https://www.gmacd.net/posts/indie-first/</link>
       <pubDate>Sun, 09 Feb 2020 14:48:00 +0000</pubDate>
       
-      <guid>https://www.gmacd.net/posts/my-first-post/</guid>
+      <guid>https://www.gmacd.net/posts/indie-first/</guid>
       <description>Here&amp;rsquo;s an attempt to join the indie web. Partly this is to play around with tech, partly because I want to see if I can write something interesting, and partly because there are 4 shouty kids nearby and I need to distract myself.
 First step is this - a simple hugo blog, a simple theme, hosted on github pages.</description>
     </item>
