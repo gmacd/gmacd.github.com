@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Graham MacDonald</title>
+    <title>Terminal</title>
     <link>https://gmacd.net/</link>
-    <description>Recent content on Graham MacDonald</description>
+    <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Sun, 09 Feb 2020 14:48:00 +0000</lastBuildDate>
@@ -17,8 +17,7 @@
       <pubDate>Sun, 09 Feb 2020 14:48:00 +0000</pubDate>
       
       <guid>https://gmacd.net/posts/indie-first/</guid>
-      <description>Here&amp;rsquo;s an attempt to join the indie web. Partly this is to play around with tech, partly because I want to see if I can write something interesting, and partly because there are 4 shouty kids nearby and I need to distract myself.
-First step is this - a simple hugo blog, a simple theme, hosted on github pages.</description>
+      <description>Here&amp;rsquo;s an attempt to join the indie web. Partly this is to play around with tech, partly because I want to see if I can write something interesting, and partly because there are 4 shouty kids nearby and I need to distract myself.</description>
     </item>
     
   </channel>
